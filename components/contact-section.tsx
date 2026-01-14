@@ -20,8 +20,11 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    const message = `Olá, meu nome é ${formData.nome}. Gostaria de um orçamento para o serviço de ${formData.servico} no meu aparelho ${formData.aparelho}.`
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=554796195245&text=${encodedMessage}`
+
+    window.open(whatsappUrl, "_blank")
 
     setIsSubmitting(false)
     setIsSuccess(true)
