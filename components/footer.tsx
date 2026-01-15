@@ -89,8 +89,6 @@ export function Footer() {
               <li className="flex items-start gap-3 hover:text-accent transition-colors group">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <span>
-                  Rua Florianópolis 155,
-                  <br />
                   Jaraguá do Sul, SC
                 </span>
               </li>
