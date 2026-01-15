@@ -5,7 +5,16 @@ import type React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Send, Check } from "lucide-react"
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog"
+import { Send } from "lucide-react"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -30,10 +39,7 @@ export function ContactSection() {
     setIsSuccess(true)
 
     // Reset form after success
-    setTimeout(() => {
-      setFormData({ nome: "", servico: "", aparelho: "" })
-      setIsSuccess(false)
-    }, 3000)
+    setFormData({ nome: "", servico: "", aparelho: "" })
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -113,19 +119,10 @@ export function ContactSection() {
 
               <Button
                 type="submit"
-                disabled={isSubmitting || isSuccess}
-                className={`w-full h-14 text-lg font-bold rounded-xl transition-all duration-300 ${
-                  isSuccess
-                    ? "bg-green-500 hover:bg-green-500"
-                    : "bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70"
-                } text-accent-foreground shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] group`}
+                disabled={isSubmitting}
+                className="w-full h-14 text-lg font-bold rounded-xl transition-all duration-300 bg-gradient-to-r from-accent to-accent/80 hover:from-accent/90 hover:to-accent/70 text-accent-foreground shadow-lg hover:shadow-xl hover:shadow-accent/30 hover:scale-[1.02] group"
               >
-                {isSuccess ? (
-                  <>
-                    <Check className="mr-2 w-5 h-5" />
-                    Mensagem Enviada!
-                  </>
-                ) : isSubmitting ? (
+                {isSubmitting ? (
                   <>
                     <div className="mr-2 w-5 h-5 border-2 border-accent-foreground/30 border-t-accent-foreground rounded-full animate-spin" />
                     Enviando...
@@ -142,6 +139,20 @@ export function ContactSection() {
             <p className="text-center text-sm text-muted-foreground mt-6">Responderemos em até 24 horas</p>
           </div>
         </div>
+
+        <AlertDialog open={isSuccess} onOpenChange={setIsSuccess}>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Mensagem Enviada com Sucesso!</AlertDialogTitle>
+              <AlertDialogDescription>
+                Obrigado por entrar em contato. Sua mensagem foi enviada e responderemos o mais breve possível.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogAction>Fechar</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </section>
   )

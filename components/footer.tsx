@@ -31,7 +31,7 @@ export function Footer() {
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/autold_?igsh=YW54djVocnZkNTc1"
                 target="_blank"
                 className="p-3 rounded-full bg-primary-foreground/10 hover:bg-accent text-primary-foreground hover:text-accent-foreground transition-all duration-300 hover:scale-110"
                 aria-label="Instagram"
@@ -39,7 +39,7 @@ export function Footer() {
                 <Instagram className="w-5 h-5" />
               </Link>
               <Link
-                href="https://wa.me/5534999999999"
+                href="https://api.whatsapp.com/send?phone=554796195245"
                 target="_blank"
                 className="p-3 rounded-full bg-primary-foreground/10 hover:bg-accent text-primary-foreground hover:text-accent-foreground transition-all duration-300 hover:scale-110"
                 aria-label="WhatsApp"
@@ -79,20 +79,19 @@ export function Footer() {
               <li className="flex items-start gap-3 hover:text-accent transition-colors group">
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <div>
-                  <div>(34) 9 9999-9999</div>
-                  <div>(34) 9 9999-9999</div>
+                  <div>(47) 9619-5245</div>
                 </div>
               </li>
               <li className="flex items-start gap-3 hover:text-accent transition-colors group">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                <span>contato@ldautomacao.com</span>
+                <span>vendasonline2025mk@gmail.com</span>
               </li>
               <li className="flex items-start gap-3 hover:text-accent transition-colors group">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <span>
                   Rua Florianópolis 155,
                   <br />
-                  Centro - Uberlândia MG
+                  Jaraguá do Sul, SC
                 </span>
               </li>
             </ul>

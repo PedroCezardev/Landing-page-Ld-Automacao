@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Space_Grotesk } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`font-sans antialiased`}>
         {children}
+        <WhatsAppButton />
         <Analytics />
       </body>
     </html>
